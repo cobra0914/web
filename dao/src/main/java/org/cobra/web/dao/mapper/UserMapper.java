@@ -8,7 +8,7 @@ import org.cobra.web.bean.User;
 
 public interface UserMapper {
 
-    @Select(value = "select username,password,enabled from users where username = #{username}")
+    @Select(value = "select * from users where username = #{username}")
     User loadUserByUsername(@Param("username") String username);
 
     @Insert(value = "insert into users (username, password, enabled, create_date) value(#{username},#{password},#{enabled},#{createDate})")
